@@ -103,54 +103,54 @@ $result2 = curl_exec($ch);
 if (strpos($result33, '"cvc_check": "pass"')) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-pill badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-pill badge-success">✓</span> <span class="badge badge-pill badge-success"> ★★★ CVV MATCHED ♛ANONBD </span></br>';
 }
-elseif(strpos($result3, "Thank You For Donation." )) {
+elseif(strpos($result2, "Thank You For Donation." )) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★★ CVV MATCHED ♛ANONBD </span></br>';
 }
-elseif(strpos($result3, "checkout_success" )) {
+elseif(strpos($result2, "checkout_success" )) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ CVC MATCHED ★ANONBD</span></br>';
 }
-if(strpos($result3, "Your card's security code is incorrect")) {
+if(strpos($result2, "Your card's security code is incorrect")) {
 
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . ' </span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ CCN MATCHED ♛ANONBD </span></br>'; 
 
 }
-elseif(strpos($result3, 'Your card zip code is incorrect.' )) {
+elseif(strpos($result2, 'Your card zip code is incorrect.' )) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ CVC MATCHED - Incorrect Zip♛ANONBD </span></br>';
 }
-elseif(strpos($result3, 'There was a problem with your credit card information: Your card has insufficient funds.')) {
+elseif(strpos($result2, 'There was a problem with your credit card information: Your card has insufficient funds.')) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ Insufficient Funds♛ANONBD </span></br>';
 }
-elseif(strpos($result3, 'Your card has expired.')) {
+elseif(strpos($result2, 'Your card has expired.')) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Card Expired ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3, "pickup_card")) {
+elseif (strpos($result2, "pickup_card")) {
   echo '<span class="badge badge-danger">Aprovadas</span> <span class="badge badge-danger">✓</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✓</span> <span class="badge badge-pill badge-danger"> ★ Pickup Card_Card - Sometime Useable ♛ ANONBD</span></br>';
 }
-elseif(strpos($result3, 'Your card number is incorrect.')) {
+elseif(strpos($result2, 'Your card number is incorrect.')) {
   echo '<span class="badge badge-dark">Reprovadas</span> <span class="badge badge-dark">✕</span> <span class="badge badge-dark">' . $lista . '</span> <span class="badge badge-dark">✕</span> <span class="badge badge-pill badge-dark"> ★ Incorrect Card Number ♛ANONBD</span> </br>';
 }
- elseif (strpos($result3, "incorrect_number")) {
+ elseif (strpos($result2, "incorrect_number")) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Incorrect Card Number♛ANONBD</span> </br>';
 }
-elseif(strpos($result3, 'There was a problem with your credit card information: Your card was declined.')) {
+elseif(strpos($result2, 'There was a problem with your credit card information: Your card was declined.')) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Card Declined  ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3, "generic_decline")) {
+elseif (strpos($result2, "generic_decline")) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Declined : Generic_Decline ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3, "do_not_honor")) {
+elseif (strpos($result2, "do_not_honor")) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Declined : Do_Not_Honor  ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3, '"cvc_check": "unchecked"')) {
+elseif (strpos($result2, '"cvc_check": "unchecked"')) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Security Code Check : Unchecked [Proxy Dead]  ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3, '"cvc_check": "fail"')) {
+elseif (strpos($result2, '"cvc_check": "fail"')) {
   echo '<span class="badge badge-info">Reprovadas</span> <span class="badge badge-pill badge-warning">✕</span> <span class="badge badge-pill badge-info">' . $lista . '</span> <span class="badge badge-pill badge-info">✕</span> <span class="badge badge-pill badge-info"> ★ Security Code Check : Fail ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3, "expired_card")) {
+elseif (strpos($result2, "expired_card")) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-pill badge-danger">✕</span> <span class="badge badge-pill badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-secondary"> ★ Expired Card ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3,'There was a problem with your credit card information: Your card does not support this type of purchase.')) {
+elseif (strpos($result2,'There was a problem with your credit card information: Your card does not support this type of purchase.')) {
   echo '<span class="badge badge-warning">Reprovadas</span> <span class="badge badge-pill badge-warning">✕</span> <span class="badge badge-warning">' . $lista . '</span> <span class="badge badge-pill badge-warning">✕</span> <span class="badge badge-pill badge-warning"> ★ Card Doesnt Support This Purchase ♛ANONBD</span> </br>';
 }
 
