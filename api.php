@@ -164,7 +164,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 'accept: application/json, text/javascript, */*; q=0.01',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-//'cookie: wordpress_sec_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|b9d7f82eb39e42ebc7c4571b21b0b73a63501a9ab275d437b9fea304eae1e5c5; GCLB=CPnzg9CL7MbnUg; PHPSESSID=04hg2d91g10299rdifd7iael38; pixelcat_id=24f8c4ff30; __stripe_mid=bbaca2d9-12de-42dd-b0bc-9c27943a8cda6e9067; __stripe_sid=43fd6a58-1716-45df-8d5e-2c0d0efc6b27f8cd9e; edd_items_in_cart=1; wordpress_logged_in_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|5bd25aa420fd927977386c232ac8aa3406ef9275fe708a6a33008fcc34212c35',
+'cookie: wordpress_sec_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|b9d7f82eb39e42ebc7c4571b21b0b73a63501a9ab275d437b9fea304eae1e5c5; GCLB=CPnzg9CL7MbnUg; PHPSESSID=04hg2d91g10299rdifd7iael38; pixelcat_id=24f8c4ff30; __stripe_mid=bbaca2d9-12de-42dd-b0bc-9c27943a8cda6e9067; __stripe_sid=43fd6a58-1716-45df-8d5e-2c0d0efc6b27f8cd9e; edd_items_in_cart=1; wordpress_logged_in_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|5bd25aa420fd927977386c232ac8aa3406ef9275fe708a6a33008fcc34212c35',
 'origin: https://wpsimplepay.com',
 'referer: https://wpsimplepay.com/checkout/?discount=SAVE50',
 'sec-fetch-dest: empty',
