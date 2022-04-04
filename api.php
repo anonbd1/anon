@@ -229,8 +229,8 @@ elseif
 } 
 
 elseif
-(strpos($result2,  "Thank You.")) {
-    echo '</br><span class="badge badge-success">👑 APPROVED! 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">CCV MATCHED {MSG:- Thank You.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
+(strpos($result2,  "Your card does not have sufficient funds. Please update your card details in our payment section.")) {
+    echo '</br><span class="badge badge-success">👑 APPROVED! 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">CCV MATCHED {MSG:- NO BALANCE.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
 } 
 
 elseif
@@ -307,7 +307,7 @@ elseif
 }
 
 elseif
-(strpos($result2,  "Your card does not have sufficient funds. Please update your card details in our payment section.")) {
+(strpos($result2,  "Your card does not have sufficient funds.")) {
     echo '</br><span class="badge badge-success">👑 Aprovada 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">LIVE {MSG:- Insufficient Funds.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
 }
 
@@ -317,8 +317,8 @@ elseif
 }
 
 elseif
-(strpos($result2,  'security code is invalid.')) {
-    echo '</br><span class="badge badge-success">👑 Aprovada 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">LIVE {MSG:- Security Code Is Invalid.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
+(strpos($result2,  'our card expiration month is invalid.')) {
+    echo '</br><span class="badge badge-success">👑 Aprovada 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">LIVE {MSG:- our cards expiration month is invalid.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
 }
 
 # -------------------------------------------------- [Stolen,Lost,Pickup,Insufficient Funds Responses END ] --------------------- #
@@ -444,8 +444,8 @@ else {
 curl_close($ch);
 ob_flush();
 
-echo "<b>1REQ Result:</b> $result1<br><br>";
-echo "<b>2REQ Result:</b> $result2<br><br>";
+//echo "<b>1REQ Result:</b> $result1<br><br>";
+//echo "<b>2REQ Result:</b> $result2<br><br>";
 
 #---------------------------------------------------------------------------------------------------------------------------------#
 #---------------------------------------------------[MADE BY 𝑫𝑹𝑨𝑮𝑶𝑵#𝑴𝑨𝑺𝑻𝑬𝑹]----------------------------------------------------#
