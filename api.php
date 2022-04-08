@@ -96,7 +96,7 @@ $ip1 = curl_exec($ch);
 curl_close($ch);
 ob_flush();  
 if (isset($ip1)){
-$ip = "Live! ✅";
+$ip = ".";
 }
 if (empty($ip1)){
 $ip = "Dead![".$rotate."] ❌";
@@ -226,6 +226,6 @@ curl_close($ch);
 ob_flush();
 
 //echo "<b>Result:</b> $result1<br><br>";
-echo "<b>Result:</b> $result2<br><br>";
+//echo "<b>Result:</b> $result2<br><br>";
 
 ?>
